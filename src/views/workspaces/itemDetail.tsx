@@ -1,4 +1,4 @@
-import { List } from "@raycast/api";
+import { List, Icon } from "@raycast/api";
 
 export default function WorkspaceDetail({ workspace }: { workspace: Workspace }) {
   return (
@@ -10,6 +10,7 @@ export default function WorkspaceDetail({ workspace }: { workspace: Workspace })
             target={`http://app.clockify.me/workspaces/${workspace.id}/settings`}
             text="Link"
           />
+          <List.Item.Detail.Metadata.Label title="Workspace ID" text={workspace.id} icon={Icon.Key} />
           <List.Item.Detail.Metadata.Separator />
           <List.Item.Detail.Metadata.TagList title="Currencies">
             {workspace.currencies.map((currency: Currency) => (

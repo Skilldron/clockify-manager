@@ -1,4 +1,4 @@
-import { Color, List, Toast, showToast } from "@raycast/api";
+import { Action, ActionPanel, Color, List, Toast, showToast } from "@raycast/api";
 import { useGetWorkspaces } from "./hooks/workspace";
 import WorkspaceDetail from "./views/workspaces/itemDetail";
 import { useGetUser } from "./hooks/user";
@@ -38,6 +38,11 @@ export default function Command() {
           <List.Item
             key={index}
             title={workspace.name}
+            actions={
+              <ActionPanel>
+                <Action.CopyToClipboard title="Copy Workspace ID" content={workspace.id} />
+              </ActionPanel>
+            }
             accessories={
               user!.activeWorkspace == workspace.id
                 ? [{ tag: { value: "Default", color: Color.Green }, tooltip: "Workspace used by default" }]

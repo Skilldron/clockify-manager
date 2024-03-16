@@ -15,6 +15,12 @@
       "title": "workspaces",
       "description": "Get all my workspaces",
       "mode": "view"
+    },
+    {
+      "name": "timeEntry",
+      "title": "Add time entry",
+      "description": "Add a new time entry to clockify",
+      "mode": "view"
     }
   ],
   "preferences": [
